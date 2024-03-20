@@ -8,4 +8,5 @@ class Solution:
             if i<0:
                 neg+=1
 
-        return pos if pos > neg else neg
+        #return pos if pos > neg else neg
+        return max(pos,neg)
