@@ -18,5 +18,5 @@ class Solution:
             swap2.next = swap1
 
             prev = swap1
+
         return dummy.next
-            
