@@ -1,15 +1,14 @@
 class Solution:
     def diStringMatch(self, s: str) -> List[int]:
-        n = len(s)
-        result = []
-        low, high = 0, n
-        for char in s:
-            if char == 'I':
-                result.append(low)
-                low += 1
+        l = []
+        left = 0
+        right = len(s)
+        for i in s:
+            if i == "I":
+                l.append(left)
+                left += 1
             else:
-                result.append(high)
-                high -= 1
-        # At the end, low and high will be the same
-        result.append(low)
-        return result
+                l.append(right)
+                right -= 1
+        l.append(left)
+        return l
