@@ -1,16 +1,8 @@
 class Solution:
     def countGoodSubstrings(self, s: str) -> int:
-        left = right = 0
-        seen = set()
-        c = 0
-        while right < len(s):
-            while s[right] in seen:
-                seen.remove(s[left])
-                left += 1
-            seen.add(s[right])
-            if len(seen) == 3:
-                c += 1
-                seen.remove(s[left])
-                left += 1
-            right += 1
-        return c
+        count = 0
+        for r in range(len(s) - 3 + 1):
+            window = s[r:r+3]
+            if len(set(window)) == 3:
+                count += 1
+        return count
