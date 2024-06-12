@@ -9,6 +9,7 @@ class Solution:
             if j in hashmap:
                 l.extend([j] * hashmap[j])
                 del hashmap[j]
+        #add the remaining elements in hashmap just like the above one
         for k in sorted(hashmap):
             if k not in l:
                 l.extend([k] * hashmap[k])
